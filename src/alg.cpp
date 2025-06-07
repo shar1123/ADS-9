@@ -78,7 +78,7 @@ std::vector<std::vector<char>> getAllPerms(PMTree& tree) {
 
 std::vector<char> getPerm1(PMTree& tree, int num) {
   auto perms = getAllPerms(tree);
-  if (num <= 0 || num > (int)perms.size())
+  if (num <= 0 || num > static_cast<int>(perms.size()))
     return {};
   return perms[num - 1];
 }
