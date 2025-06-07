@@ -2,6 +2,7 @@
 #include <iostream>
 #include <chrono>
 #include <random>
+#include <vector>
 #include "tree.h"
 
 void printVec(const std::vector<char>& vec) {
@@ -11,7 +12,7 @@ void printVec(const std::vector<char>& vec) {
 }
 
 int main() {
-  std::vector<char> in = { '1','2','3','4','5' };
+  std::vector<char> in = { '1', '2', '3', '4', '5' };
   PMTree tree(in);
 
   auto start = std::chrono::high_resolution_clock::now();
@@ -32,14 +33,16 @@ int main() {
   end = std::chrono::high_resolution_clock::now();
   std::cout << "getPerm1 #" << randomIndex << ": ";
   printVec(perm1);
-  std::cout << "Time: " << std::chrono::duration<double>(end - start).count() << "s\n";
+  std::cout << "Time: " << std::chrono::duration<double>(end - start).count()
+      << "s\n";
 
   start = std::chrono::high_resolution_clock::now();
   auto perm2 = getPerm2(tree, randomIndex);
   end = std::chrono::high_resolution_clock::now();
   std::cout << "getPerm2 #" << randomIndex << ": ";
   printVec(perm2);
-  std::cout << "Time: " << std::chrono::duration<double>(end - start).count() << "s\n";
+  std::cout << "Time: " << std::chrono::duration<double>(end - start).count()
+      << "s\n";
 
   return 0;
 }
