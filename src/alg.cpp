@@ -5,6 +5,7 @@
 #include  <cstdlib>
 #include <algorithm>
 #include <functional>
+#include  <vector>
 #include  "tree.h"
 
 TreeNode::TreeNode(char val) : value(val) {}
@@ -53,7 +54,8 @@ void PMTree::deleteSubtree(TreeNode* node) {
   delete node;
 }
 
-void dfs(TreeNode* node, std::vector<char>& path, std::vector<std::vector<char>>& result) {
+void dfs(TreeNode* node, std::vector<char>& path,
+        std::vector<std::vector<char>>& result) {
   path.push_back(node->value);
   if (node->children.empty()) {
     result.push_back(path);
