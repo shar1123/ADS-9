@@ -8,7 +8,7 @@ class TreeNode {
  public:
   char value;
   std::vector<TreeNode*> children;
-  TreeNode(char val);
+  explicit TreeNode(char val);
   ~TreeNode();
 };
 
@@ -18,7 +18,7 @@ class PMTree {
 
  public:
   std::vector<TreeNode*> roots;
-  PMTree(const std::vector<char>& chars);
+  explicit PMTree(const std::vector<char>& chars);
   ~PMTree();
   void buildTree(TreeNode* node, std::vector<char> remaining);
   void deleteSubtree(TreeNode* node);
